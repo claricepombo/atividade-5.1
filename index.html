@@ -8,7 +8,7 @@
     <style>
 
         /* =========================
-           RESET E BASE
+           RESET E PADRÃO XADREZ
         ========================= */
 
         * {
@@ -16,76 +16,67 @@
         }
 
         body {
-            background-color: #eeeeee;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-
-        /* =========================
-           ESTRUTURA PRINCIPAL (3 COLUNAS)
-        ========================= */
-
-        .pagina {
-            display: flex; /* Cria um layout flexível com as colunas lado a lado */
-            width: 100%;
-            max-width: 1100px; /* Define uma largura máxima para a página centralizar */
-            margin: 0 auto; /* Centraliza a página na tela */
-            min-height: 100vh;
-            background-color: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-
-        /* Faixas laterais com o padrão de xadrez escuro */
-        .faixa-lateral {
-            width: 50px; /* Largura da faixa lateral */
-            flex-shrink: 0; /* Impede que a faixa encolha */
             background-color: #111111;
+            /* Padrão xadrez escuro cobrindo 100% das laterais da tela */
             background-image:
                 linear-gradient(
                     45deg,
-                    rgba(255,255,255,0.05) 25%,
+                    rgba(255,255,255,0.06) 25%,
                     transparent 25%,
                     transparent 75%,
-                    rgba(255,255,255,0.05) 75%
+                    rgba(255,255,255,0.06) 75%
                 ),
                 linear-gradient(
                     45deg,
-                    rgba(255,255,255,0.05) 25%,
+                    rgba(255,255,255,0.06) 25%,
                     transparent 25%,
                     transparent 75%,
-                    rgba(255,255,255,0.05) 75%
+                    rgba(255,255,255,0.06) 75%
                 );
             background-position: 0 0, 5px 5px;
             background-size: 10px 10px;
         }
 
-        /* Área central que engloba Banner + Conteúdo */
-        .coluna-principal {
-            flex: 1; /* Ocupa todo o espaço restante entre as faixas */
+
+        /* =========================
+           ESTRUTURA PRINCIPAL (100% LARGURA)
+        ========================= */
+
+        .pagina {
+            width: 100%;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Coluna Central com largura ampla */
+        .coluna-principal {
+            width: 95%; /* Ocupa quase a tela inteira */
+            max-width: 1400px; /* Garante amplitude em telas ultra-wide */
             background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
         }
 
 
         /* =========================
-           BANNER (CORTADO AO MEIO)
+           BANNER DO TOPO (GRANDE)
         ========================= */
 
         .banner {
             width: 100%;
-            height: 250px; /* Define a altura para mostrar metade da imagem */
-            overflow: hidden; /* Esconde o resto da imagem que sair desse tamanho */
+            height: 380px; /* Aumentado para dar destaque à imagem */
+            overflow: hidden;
             background-color: #111111;
         }
 
         .banner img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
-            object-position: top center; /* Foca na parte superior da imagem */
+            object-fit: cover; /* Mantém a proporção sem distorcer */
+            object-position: top center; /* Foca no topo do herói */
             display: block;
         }
 
@@ -95,7 +86,7 @@
         ========================= */
 
         .conteudo {
-            padding: 30px 40px 50px;
+            padding: 40px 60px 60px;
         }
 
 
@@ -104,25 +95,25 @@
         ========================= */
 
         h1, h2 {
-            color: #f0a51a; /* Cor dourada dos títulos */
+            color: #f0a51a;
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 36px;
             margin: 0 0 15px;
         }
 
         h2 {
-            font-size: 22px;
-            margin: 30px 0 10px;
+            font-size: 24px;
+            margin: 35px 0 12px;
         }
 
         p {
             color: #333333;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.6;
             text-align: justify;
-            margin: 0 0 15px;
+            margin: 0 0 20px;
         }
 
 
@@ -132,58 +123,61 @@
 
         .logo {
             display: block;
-            width: 190px;
+            width: 200px;
             height: auto;
-            max-height: 60px;
-            object-fit: contain;
-            margin: 25px auto 15px;
+            margin: 30px auto 15px;
         }
 
         .destaque-imagem {
             text-align: center;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .destaque-imagem img {
-            width: 240px;
+            width: 280px;
             height: auto;
             display: inline-block;
             border: 1px solid #ddd;
         }
 
-        /* Legenda abaixo da imagem de destaque (como mostrado no mockup) */
         .legenda {
-            font-size: 11px;
+            font-size: 12px;
             color: #f0a51a;
-            margin-top: 5px;
+            margin-top: 6px;
             text-align: center;
         }
 
 
         /* =========================
-           RESPONSIVIDADE
+           RODAPÉ
         ========================= */
 
-        @media (max-width: 600px) {
+        footer {
+            background-color: #111111;
+            color: #777;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
 
-            .faixa-lateral {
-                width: 20px;
+
+        /* =========================
+           RESPONSIVIDADE (CELULARES)
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .coluna-principal {
+                width: 100%;
             }
 
             .banner {
-                height: 180px;
+                height: 220px;
             }
 
             .conteudo {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-
-            h2 {
-                font-size: 19px;
+                padding: 25px;
             }
 
         }
@@ -196,13 +190,9 @@
 
     <div class="pagina">
 
-        <!-- Faixa Esquerda que vai até o topo -->
-        <div class="faixa-lateral"></div>
-
-        <!-- Coluna Centro: Banner + Conteúdo -->
         <div class="coluna-principal">
 
-            <!-- Banner recortado no topo -->
+            <!-- Banner com altura expandida -->
             <header class="banner">
                 <img src="superman.jpg" alt="Banner do Superman">
             </header>
@@ -220,10 +210,8 @@
                     como Kal-El.
                 </p>
 
-                <!-- Logo centralizada -->
                 <img src="logosuperman.jpg" alt="Logo do Superman" class="logo">
 
-                <!-- Imagem em destaque com legenda -->
                 <div class="destaque-imagem">
                     <img src="superman2.jpg" alt="Superman">
                     <div class="legenda">Action Comics #1 - Primeira aparição do Superman</div>
@@ -252,10 +240,11 @@
 
             </main>
 
-        </div>
+            <footer>
+                &copy; 2026 SUPERMAN FAN SITE
+            </footer>
 
-        <!-- Faixa Direita que vai até o topo -->
-        <div class="faixa-lateral"></div>
+        </div>
 
     </div>
 
