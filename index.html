@@ -1,127 +1,330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Superman</title>
+
     <style>
-      
-      body {
-          background-color: #d8d8d8; 
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 20px 0;
-      }
 
-      
-      .site-container {
-          width: 800px;
-          margin: 0 auto;
-          background-color: #ffffff;
-          border: 1px solid #ccc;
-          box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-      }
+        /* =========================
+           FUNDO DA PÁGINA
+        ========================= */
 
-      
-      .banner img {
-          width: 100%;
-          height: auto;
-          display: block;
-      }
+        body {
+            background-color: #eeeeee;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px 0 40px;
+        }
 
-      
-      .corpo-pagina {
-          display: flex;
-          background-color: #111; 
 
-     
-      .faixa-lateral {
-          width: 60px; 
-          flex-shrink: 0;
-      }
+        /* =========================
+           CAIXA SUPERIOR
+        ========================= */
 
-      
-      .conteudo-principal {
-          background-color: #ffffff;
-          flex-grow: 1;
-          padding: 25px 35px;
-      }
+        .caixa-superior {
+            width: 680px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid #c8c8c8;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+            padding: 10px;
+        }
 
-      /* Títulos e textos */
-      .titulo-azul {
-          color: #0b3d91;
-          margin-top: 10px;
-          margin-bottom: 10px;
-          font-size: 22px;
-      }
 
-      p {
-          color: #333;
-          line-height: 1.5;
-          font-size: 14px;
-          text-align: justify;
-      }
+        /* Banner */
 
-      .img-pequena {
-          margin-top: 15px;
-          max-width: 180px;
-          display: block;
-      }
+        .banner img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
 
-      .destaque-imagem {
-          text-align: center;
-          margin: 20px 0;
-      }
 
-      .destaque-imagem img {
-          max-width: 250px;
-          height: auto;
-      }
+        /* Corpo com as faixas */
+
+        .corpo-superior {
+            display: flex;
+            background-color: #111111;
+        }
+
+
+        /* Faixas laterais */
+
+        .faixa-lateral {
+            width: 25px;
+            flex-shrink: 0;
+
+            /* Textura parecida com a imagem de referência */
+            background-color: #111111;
+
+            background-image:
+                linear-gradient(45deg,
+                    rgba(255,255,255,0.05) 25%,
+                    transparent 25%,
+                    transparent 75%,
+                    rgba(255,255,255,0.05) 75%),
+                linear-gradient(45deg,
+                    rgba(255,255,255,0.05) 25%,
+                    transparent 25%,
+                    transparent 75%,
+                    rgba(255,255,255,0.05) 75%);
+
+            background-position: 0 0, 5px 5px;
+            background-size: 10px 10px;
+        }
+
+
+        /* Conteúdo branco */
+
+        .conteudo-superior {
+            background-color: white;
+            flex: 1;
+            padding: 22px 20px 18px;
+        }
+
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        h1,
+        h2 {
+            color: #f0a51a;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 12px;
+        }
+
+        h2 {
+            font-size: 17px;
+            margin: 15px 0 8px;
+        }
+
+
+        /* =========================
+           TEXTOS
+        ========================= */
+
+        p {
+            color: #333333;
+            font-size: 11px;
+            line-height: 1.45;
+            text-align: justify;
+            margin: 0 0 10px;
+        }
+
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            display: block;
+            width: 190px;
+            max-height: 45px;
+            object-fit: contain;
+            margin: 8px auto 0;
+        }
+
+
+        /* =========================
+           SEGUNDA CAIXA
+        ========================= */
+
+        .caixa-inferior {
+            width: 600px;
+            margin: 25px auto 0;
+
+            background-color: white;
+            border: 1px solid #c8c8c8;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20);
+
+            padding: 25px;
+        }
+
+
+        /* Corpo da segunda caixa */
+
+        .corpo-inferior {
+            display: flex;
+            background-color: #111111;
+        }
+
+
+        /* Faixas da segunda caixa */
+
+        .corpo-inferior .faixa-lateral {
+            width: 25px;
+        }
+
+
+        /* Conteúdo da segunda caixa */
+
+        .conteudo-inferior {
+            background-color: white;
+            flex: 1;
+            padding: 0 18px 20px;
+        }
+
+
+        /* Imagem central */
+
+        .destaque-imagem {
+            text-align: center;
+            margin: 0 0 15px;
+        }
+
+        .destaque-imagem img {
+            width: 180px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+
+        /* Ajuste do primeiro título da segunda caixa */
+
+        .conteudo-inferior h2:first-of-type {
+            margin-top: 5px;
+        }
+
     </style>
 </head>
+
+
 <body>
 
-  <div class="site-container">
-     
-      <header class="banner">
-          <img src="superman.jpg" alt="Banner Superman">
-      </header>
 
-     
-      <div class="corpo-pagina">
-          
-         
-          <div class="faixa-lateral"></div>
+    <!-- =================================
+         PRIMEIRA CAIXA
+    ================================== -->
 
-          
-          <main class="conteudo-principal">
-              
-              <h1 class="titulo-azul">Superman</h1>
-              <p>
-                  Superman é um dos personagens mais conhecidos dos quadrinhos e um dos principais símbolos dos super-heróis. Ele foi criado por Jerry Siegel e Joe Shuster e apareceu pela primeira vez em 1938. Sua história começa no planeta Krypton, onde nasceu como Kal-El.
-              </p>
-              
-              <img src="logosuperman.jpg" alt="Logo Superman" class="img-pequena">
+    <div class="caixa-superior">
 
-              <div class="destaque-imagem">
-                  <img src="superman2.jpg" alt="Superman em ação">
-              </div>
+        <!-- Banner -->
 
-              <h2 class="titulo-azul">Publicação</h2>
-              <p>
-                  Superman foi publicado pela primeira vez em junho de 1938, na revista em quadrinhos Action Comics #1, publicada pela editora Detective Comics, Inc., que mais tarde se tornou a DC Comics.
-              </p>
+        <header class="banner">
+            <img src="superman.jpg" alt="Banner do Superman">
+        </header>
 
-              <h2 class="titulo-azul">História</h2>
-              <p>
-                  A história do Superman começa no planeta Krypton, onde ele nasceu com o nome de Kal-El. Quando Krypton estava prestes a ser destruído, seus pais o enviaram para a Terra em uma pequena nave espacial.
-              </p>
 
-          </main>
+        <!-- Corpo -->
 
-          <div class="faixa-lateral"></div>
+        <div class="corpo-superior">
 
-      </div>
-  </div>
+            <!-- Faixa esquerda -->
+
+            <div class="faixa-lateral"></div>
+
+
+            <!-- Conteúdo -->
+
+            <main class="conteudo-superior">
+
+                <h1>Superman</h1>
+
+                <p>
+                    Superman é um dos personagens mais conhecidos dos quadrinhos
+                    e um dos principais símbolos dos super-heróis. Ele foi criado
+                    por Jerry Siegel e Joe Shuster e apareceu pela primeira vez
+                    em 1938. Sua história começa no planeta Krypton, onde nasceu
+                    como Kal-El.
+                </p>
+
+
+                <!-- Logo -->
+
+                <img
+                    src="logosuperman.jpg"
+                    alt="Logo do Superman"
+                    class="logo"
+                >
+
+            </main>
+
+
+            <!-- Faixa direita -->
+
+            <div class="faixa-lateral"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         SEGUNDA CAIXA
+    ================================== -->
+
+    <div class="caixa-inferior">
+
+        <div class="corpo-inferior">
+
+            <!-- Faixa esquerda -->
+
+            <div class="faixa-lateral"></div>
+
+
+            <!-- Conteúdo -->
+
+            <main class="conteudo-inferior">
+
+
+                <!-- Imagem -->
+
+                <div class="destaque-imagem">
+
+                    <img
+                        src="superman2.jpg"
+                        alt="Superman"
+                    >
+
+                </div>
+
+
+                <!-- Publicação -->
+
+                <h2>Publicação</h2>
+
+                <p>
+                    Superman foi publicado pela primeira vez em junho de 1938,
+                    na revista em quadrinhos Action Comics #1, publicada pela
+                    editora Detective Comics, Inc., que mais tarde se tornou
+                    a DC Comics. O personagem foi criado pelo roteirista
+                    Jerry Siegel e pelo desenhista Joe Shuster.
+                </p>
+
+
+                <!-- História -->
+
+                <h2>Histórico</h2>
+
+                <p>
+                    A história do Superman começa no planeta Krypton, onde ele
+                    nasceu com o nome de Kal-El. Quando Krypton estava prestes
+                    a ser destruído, seus pais o enviaram para a Terra em uma
+                    pequena nave espacial. Na Terra, ele foi encontrado e
+                    criado por Jonathan e Martha Kent, passando a se chamar
+                    Clark Kent.
+                </p>
+
+            </main>
+
+
+            <!-- Faixa direita -->
+
+            <div class="faixa-lateral"></div>
+
+        </div>
+
+    </div>
+
 
 </body>
+
 </html>
